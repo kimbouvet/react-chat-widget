@@ -14,7 +14,11 @@ class Widget extends Component {
   }
 
   toggleConversation = () => {
-    this.props.dispatch(toggleChat());
+    const {dispatch, handleToggleWidget} = this.props;
+    dispatch(toggleChat());
+    if(handleToggleWidget){
+      handleToggleWidget();
+    }
   }
 
   handleMessageSubmit = (event) => {
@@ -62,6 +66,7 @@ Widget.propTypes = {
   subtitle: PropTypes.string,
   handleNewUserMessage: PropTypes.func.isRequired,
   handleQuickButtonClicked: PropTypes.func.isRequired,
+  handleToggleWidget: PropTypes.func,
   senderPlaceHolder: PropTypes.string,
   profileAvatar: PropTypes.string,
   showCloseButton: PropTypes.bool,
