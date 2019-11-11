@@ -13,6 +13,7 @@ const ConnectedWidget = props =>
       subtitle={props.subtitle}
       handleNewUserMessage={props.handleNewUserMessage}
       handleQuickButtonClicked={props.handleQuickButtonClicked}
+      handleToggleWidget={props.handleToggleWidget}
       senderPlaceHolder={props.senderPlaceHolder}
       profileAvatar={props.profileAvatar}
       showCloseButton={props.showCloseButton}
@@ -29,6 +30,7 @@ ConnectedWidget.propTypes = {
   subtitle: PropTypes.string,
   handleNewUserMessage: PropTypes.func.isRequired,
   handleQuickButtonClicked: PropTypes.func,
+  handleToggleWidget: PropTypes.func,
   senderPlaceHolder: PropTypes.string,
   profileAvatar: PropTypes.string,
   showCloseButton: PropTypes.bool,
